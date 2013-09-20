@@ -1,0 +1,11 @@
+name: intl_data_gen
+version: 0.0.1
+author: Dart Authors <misc@dartlang.org>
+description: Generates data and code for use with the 'intl' package.
+homepage: http://github.com/seaneagan/intl_data_gen
+dependencies:
+  cldr: any
+  codegen: any
+  logging: any
+  parsers: any
+  unittest: any

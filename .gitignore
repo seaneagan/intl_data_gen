@@ -1,0 +1,9 @@
+.project
+.metadata
+.settings/
+*pubspec.lock
+.children
+.project
+packages
+out
+.buildlog
