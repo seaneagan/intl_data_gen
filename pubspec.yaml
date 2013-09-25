@@ -6,6 +6,7 @@ homepage: http://github.com/seaneagan/intl_data_gen
 dependencies:
   cldr: any
   codegen: any
+  intlx: any
   logging: any
   parsers: any
   unittest: any

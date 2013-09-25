@@ -8,21 +8,21 @@ abstract class IntlDataGen {
 
   static var logger = getLogger("intl_data_gen.IntlDataGen");
 
-  final cldrJsonPath = new Options().arguments.first;
-  JsonExtractor get extractor => new JsonExtractor(cldrJsonPath);
+  final JsonExtractor extractor;
   final PathGenerator pathGenerator;
+  final DataSet dataSet;
   PubPackage get intlDataPackage => pathGenerator.package;
 
-  IntlDataGen(this.pathGenerator);
+  IntlDataGen(this.extractor, this.dataSet, this.pathGenerator);
 
   /// Returns a Map from locales to locale data.
-  fetch();
+  Map <String, dynamic> fetch() => extractor.extract(dataSet);
 
   /// Transforms [localeData] for a given [locale] as necessary.
   transform(String locale, localeData) => localeData;
 
   /// Extracts, transforms, and stores locale data.
-  process() {
+  generate() {
     logger.info('=== Build ${pathGenerator.dataType} data ===');
     var extracted = new LogStep(logger, "extract locale data from CLDR")
         .execute(fetch);
