@@ -50,8 +50,7 @@ $libraryMapEntries
   };
 
 Future<bool> loadLocale([String locale]) {
-  if(PluralLocaleImpl.map.containsKey(locale)) 
-    return new Future.immediate(false);
+  if(PluralLocaleImpl.map.containsKey(locale)) return new Future.value(false);
   return libraryMap[locale].load().then((_) {
     init(PluralLocale pluralLocale) => 
       PluralLocaleImpl.map[locale] = pluralLocale;

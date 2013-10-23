@@ -14,7 +14,7 @@ import 'package:intl_data_gen/intl_data_gen.dart';
 
 class RelativeTimeCodeGen extends IntlCodeGen {
 
-  static var logger = getLogger('PluralCodeGen');
+  static var logger = getLogger('RelativeTimeCodeGen');
 
   final type = "relative_time";
   final symbolsClass = "RelativeTimeSymbols";
